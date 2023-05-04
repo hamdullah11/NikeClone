@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { FlatList } from "react-native";
 import cart from "../data/cart";
@@ -6,7 +12,7 @@ import CartListItem from "../components/CartListItem";
 
 const ShoppingCart = () => {
   const ShoppingCartTotal = () => (
-    <View style={styles.totalContainer}>
+    <ScrollView style={styles.totalContainer}>
       <View style={styles.row}>
         <Text
           style={{
@@ -62,7 +68,7 @@ const ShoppingCart = () => {
           330 US$
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 
   return (
@@ -79,7 +85,7 @@ const ShoppingCart = () => {
       />
       <TouchableOpacity
         style={styles.button}
-        activeOpacity={0.7}
+        activeOpacity={0.4}
         // onPress={addToCart}
       >
         <Text style={styles.btnText}>Check Out</Text>
@@ -104,7 +110,8 @@ const styles = StyleSheet.create({
   },
   button: {
     position: "absolute",
-    backgroundColor: "black",
+    backgroundColor: "lightgray",
+    opacity: 0.9,
     bottom: 30,
     width: "90%",
     alignSelf: "center",
@@ -113,7 +120,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   btnText: {
-    color: "white",
+    color: "black",
     fontWeight: "500",
     fontSize: 16,
     // textAlign: "center",

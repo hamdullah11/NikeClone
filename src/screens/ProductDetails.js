@@ -83,9 +83,10 @@ const styles = StyleSheet.create({
     bottom: 30,
     width: "90%",
     alignSelf: "center",
-    padding: 20,
+    height: 50,
     borderRadius: 100,
     alignItems: "center",
+    justifyContent: "center",
   },
   btnText: {
     color: "white",
