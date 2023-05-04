@@ -8,8 +8,11 @@ import ShoppingCart from "./screens/ShoppingCart";
 
 const Stack = createNativeStackNavigator();
 import { FontAwesome5 } from "@expo/vector-icons";
+import { useSelector } from "react-redux";
+import { selectNumberOfItems } from "./store/CartSlice";
 
 const Navigation = () => {
+  const numberOfItems = useSelector(selectNumberOfItems);
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -38,7 +41,7 @@ const Navigation = () => {
                     color: "gray",
                   }}
                 >
-                  1
+                  {numberOfItems}
                 </Text>
               </TouchableOpacity>
             ),

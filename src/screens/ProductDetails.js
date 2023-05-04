@@ -11,15 +11,18 @@ import {
 import React from "react";
 import products from "../data/products";
 import { Image } from "react-native";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cartSlice } from "../store/CartSlice";
 
 const ProductDetails = () => {
   const product = useSelector((state) => state.products.selectedProduct);
 
+  const dispatch = useDispatch();
+
   const { width } = useWindowDimensions();
 
   const addToCart = () => {
-    alert("cart");
+    dispatch(cartSlice.actions.addCartItem({ product }));
   };
   return (
     <View>
